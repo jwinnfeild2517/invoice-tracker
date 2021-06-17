@@ -1,0 +1,162 @@
+// Place all the styles related to the Invoices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.notice, .alert {
+  margin: 0;
+}
+
+.dashboard-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #141725;
+  display: flex;
+  margin: 0;
+
+  .sidebar {
+    height: 100vh;
+    background-color: #20213A;
+    width: 5%;
+  }
+
+  .main-content {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .main-content-header {
+      color: white;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3em;
+
+
+      .header-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        select::after {
+          margin-left: 10px;
+        }
+
+        .filter {
+          margin-right: 10px;
+          background-color: transparent;
+          color: white;
+          border: none;
+        }
+
+        button {
+          background-color: #7D5CFA;
+          color: white;
+          border-radius: 25px;
+          padding: 5px 11px;
+          border: none;
+
+          .add-icon {
+            padding: 8px;
+            background: white;
+            color: #7D5CFA;
+            border-radius: 50px;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+
+        }
+      }
+
+    }
+
+    .main-content-content {
+      width: 50%;
+      color: white;
+      font-size: 12px;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #20213A;
+          border-radius: 10px;
+          margin-bottom: 1em;
+          padding: 10px;
+
+          .name-date {
+            color: #666881;
+          }
+
+          .total {
+            font-size: 16px;
+          }
+
+          .invoice-arrow {
+            font-size: 10px;
+            color: #5045A4;
+          }
+
+          .invoice-arrow:hover {
+            font-size: 12px;
+            color: white;
+          }
+
+          p{
+            width: 20%;
+            margin: 0;
+            .number-icon {
+              color: #585D88;
+            }
+          }
+
+          .status-completed, .status-pending {
+            background-color: #1E2C3F;
+            color: #39B793;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            padding: 10px;
+            width: 80px;
+            font-weight: 600;
+            letter-spacing: .2px;
+
+            .status-circle {
+              font-size: 5px;
+              margin-right: 5px;
+            }
+          }
+
+          .status-pending {
+            color: #CC7507;
+            background-color: #2B2637;
+          }
+        }
+      }
+    }
+  }
+}

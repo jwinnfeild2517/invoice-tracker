@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div class="dashboard-container">
+  <section class="sidebar">
+
+  </section>
+  <section class="main-content">
+    <div class="main-content-header">
+      <div>
+        <h1>Invoices</h1>
+        <p>There are <%= @invoices.length %> total Invoices</p>
+      </div>
+
+      <div class="header-right">
+        <form action="/invoices" method="GET">
+          <select name="filter" id="filter" onchange=this.form.submit() class="filter">
+            <option value="">Filter by status</option>
+            <option value="Paid">Paid</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </form>
+        <button><i class="fas fa-plus add-icon"></i><%= link_to 'New Invoice', new_invoice_path %></button>
+      </div>
+    </div>
+    <div class="main-content-content">
+      <ul>
+        <% @invoices.each do |invoice| %>
+          <li class="invoice-item">
+            <p class="invoice-number"><span class="number-icon">#</span><%= invoice.invoice_number %></p>
+            <p class="name-date">Due <%= invoice.due %></p>
+            <p class="name-date">Client Name</p>
+            <p class="total"><%= number_to_currency(invoice.total) %></p>
+            <% if invoice.status === 'Completed' %>
+              <p class="status-completed"><i class="fas fa-circle status-circle"></i> <%= invoice.status %></p>
+            <% else %>
+              <p class="status-pending"><i class="fas fa-circle status-circle"></i> <%= invoice.status %></p>
+            <% end %>
+            <%= link_to '', invoice, class: 'fas fa-chevron-right invoice-arrow'%>
+
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</div>
+

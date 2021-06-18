@@ -5,8 +5,14 @@ class InvoicesController < ApplicationController
 
   # GET /invoices or /invoices.json
   def index
-    if params['filter']
+
+    case params['filter']
+    when 'Paid'
       @invoices = Invoice.where(status: params['filter'])
+    when 'Completed'
+      @invoices = Invoice.where(status: params['filter'])
+    when 'Total'
+      @invoices = Invoice.order(total: :desc)
     else
       @invoices = Invoice.all
     end
@@ -15,6 +21,12 @@ class InvoicesController < ApplicationController
   # GET /invoices/1 or /invoices/1.json
   def show
     @items = @invoice.items
+    @total = 0
+    @items.each do |item|
+      @total += item.cost
+    end
+
+    @invoice.update(total:@total)
   end
 
   # GET /invoices/new
@@ -68,6 +80,7 @@ class InvoicesController < ApplicationController
     def set_invoice
       @invoice = Invoice.find(params[:id])
     end
+
 
     # Only allow a list of trusted parameters through.
     def invoice_params

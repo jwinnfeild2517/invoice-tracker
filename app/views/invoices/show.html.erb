@@ -9,7 +9,7 @@
         </tr>
         <tr>
           <td><%= @invoice.due %></td>
-          <td><%= @invoice.total %></td>
+          <td><%= number_to_currency(@invoice.total) %></td>
         </tr>
         <tr>
           <th>Project Description</th>
@@ -32,6 +32,8 @@
           <td><%= item.name %></td>
           <td><%= item.qty %></td>
           <td><%= item.cost %></td>
+          <td class="trash-icon"><%= link_to '', item_url(item, invoice_id: @invoice.id), method: :delete, class: 'fas fa-trash' %></td>
+          <!-- <%= link_to '', item_path(item), method: :delete, class: 'fas fa-trash' %> -->
         </tr>
       <% end %>
     </table>

@@ -8,9 +8,11 @@
   <div class="header-right">
     <form action="/invoices" method="GET">
       <select name="filter" id="filter" onchange=this.form.submit() class="filter">
-        <option value="">Filter by status</option>
+        <option value="">Filter by</option>
         <option value="Paid">Paid</option>
         <option value="Completed">Completed</option>
+        <option value="Total">Total Cost</option>
+
       </select>
     </form>
     <button><i class="fas fa-plus add-icon"></i><%= link_to 'New Invoice', new_invoice_path %></button>

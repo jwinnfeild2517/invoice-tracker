@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :invoices, path_names: { invoices: "dashboard" }
+  resources :items
 
-  post '/new/item', to: 'items#create'
 
 
   root to: 'invoices#index'

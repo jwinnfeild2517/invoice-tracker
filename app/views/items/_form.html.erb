@@ -1,4 +1,4 @@
-<%= form_with(url: '/new/item', method: 'POST' ) do |form| %>
+<%= form_with(url: items_url, method: 'POST' ) do |form| %>
 
   <div class="field">
     <%= form.label :name %>
@@ -7,12 +7,12 @@
 
   <div class="field">
     <%= form.label 'QTY' %>
-    <%= form.number_field :qty %>
+    <%= form.number_field :qty%>
   </div>
 
   <div class="field">
     <%= form.label 'Cost' %>
-    <%= form.number_field :cost %>
+    <%= form.number_field :cost, step: 0.5 %>
   </div>
 
   <%= form.hidden_field :invoice_id, value:invoice %>

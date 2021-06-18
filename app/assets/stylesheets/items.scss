@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-
-
 .invoice-show-container {
   width: 100%;
   height: 100%;
@@ -27,6 +24,13 @@
       background-color: #20213A;
       padding: 12px;
     }
+  }
+
+
+  .trash-icon {
+    color: red;
+    padding: 0;
+    text-align: center;
   }
 
 

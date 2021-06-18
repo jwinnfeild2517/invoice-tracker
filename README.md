@@ -1,24 +1,18 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Invoice Tracking Dashboard for a small business.
 
-Things you may want to cover:
+### User Story
 
-* Ruby version
+* User can create a company
 
-* System dependencies
+* User can view all invoices for their specific company
 
-* Configuration
+* User can add an invoice with the date completed, description and status
 
-* Database creation
+* User can add charges for items purchased or hours worked on an invoice
 
-* Database initialization
+* Users can view the total amount due for an invoice
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* User should be able to filter invoices by status, and sort by amount due, date created, and last updated
 
 * ...

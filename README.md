@@ -1,6 +1,8 @@
 
 ## Invoice Tracking Dashboard for a small business.
 
+### Built Ruby on Rails, Sass, Postgres
+
 ### User Story
 
 * User can create a company
@@ -16,3 +18,7 @@
 * User should be able to filter invoices by status, and sort by amount due, date created, and last updated
 
 * ...
+
+
+
+![image](https://user-images.githubusercontent.com/46112853/122508548-2670b580-cfd0-11eb-817a-dc4601908075.png)

@@ -1,24 +1,45 @@
 <p id="notice"><%= notice %></p>
+<div class="invoice-show-container">
+  <section class="left-column">
+      <h1>#<%= @invoice.invoice_number %></h1>
+      <table>
+        <tr>
+          <th>Date Completed</th>
+          <th>Total Cost</th>
+        </tr>
+        <tr>
+          <td><%= @invoice.due %></td>
+          <td><%= @invoice.total %></td>
+        </tr>
+        <tr>
+          <th>Project Description</th>
+        </tr>
+        <tr>
+          <td><%= @invoice.description %></td>
+        </tr>
+      </table>
+  </section>
+  <section class="right-column">
+    <h3>Item List</h3>
+    <table>
+      <tr class="item-headers">
+        <th>Name</th>
+        <th>Qty</th>
+        <th>Cost</th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.qty %></td>
+          <td><%= item.cost %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= render '/items/form', invoice: @invoice.id %>
+  </section>
 
-<p>
-  <strong>Total:</strong>
-  <%= @invoice.total %>
-</p>
+    <!-- <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+    <%= link_to 'Back', invoices_path %> -->
+</div>
 
-<p>
-  <strong>Due:</strong>
-  <%= @invoice.due %>
-</p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @invoice.status %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @invoice.description %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>

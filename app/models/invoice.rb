@@ -1,4 +1,6 @@
 class Invoice < ApplicationRecord
+  has_many :items
+
   validates :total, presence: true
   validates :due, presence: true
   validates :status, presence: true

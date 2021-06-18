@@ -15,7 +15,7 @@
 
 * Users can view the total amount due for an invoice
 
-* User should be able to filter invoices by status, and sort by amount due, date created, and last updated
+* User should be able to filter invoices by status, and sort by amount due, date created, last updated
 
 * ...
 

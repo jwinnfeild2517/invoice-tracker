@@ -1,5 +1,5 @@
 
-## Invoice Tracking Dashboard for a small business.
+## Invoice Tracking Dashboard for small business.
 
 #### Built in Ruby on Rails, Sass, Postgres
 

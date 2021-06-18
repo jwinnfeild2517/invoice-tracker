@@ -3,9 +3,7 @@ class InvoicesController < ApplicationController
 
   require 'pry'
 
-  # GET /invoices or /invoices.json
   def index
-
     case params['filter']
     when 'Paid'
       @invoices = Invoice.where(status: params['filter'])
@@ -18,14 +16,9 @@ class InvoicesController < ApplicationController
     end
   end
 
-  # GET /invoices/1 or /invoices/1.json
   def show
     @items = @invoice.items
-    @total = 0
-    @items.each do |item|
-      @total += item.cost
-    end
-
+    @total = @items.sum(:cost)
     @invoice.update(total:@total)
   end
 

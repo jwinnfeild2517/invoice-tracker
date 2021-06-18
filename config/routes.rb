@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'invoices#index'
   resources :invoices, path_names: { invoices: "dashboard" }
   resources :items
-
-
-
-  root to: 'invoices#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  match '*path', to: ->(env) { [404, {}, ['Oops Something Went Wrong...Check URL']] }, via: :all
 end

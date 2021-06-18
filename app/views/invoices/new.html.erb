@@ -1,5 +1,13 @@
-<h1>New Invoice</h1>
 
-<%= render 'form', invoice: @invoice %>
+<div class="page-container-form">
+  <div class="form-container">
 
-<%= link_to 'Back', invoices_path %>
+    <div class="form-header">
+      <h3>New Invoice</h3>
+      <%= link_to '', invoices_path, class:'fas fa-times exit-form-button' %>
+    </div>
+
+    <%= render 'form', invoice: @invoice %>
+
+  </div>
+</div>

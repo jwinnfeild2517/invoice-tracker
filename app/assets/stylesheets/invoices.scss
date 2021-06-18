@@ -9,8 +9,12 @@
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
 body {
   margin: 0;
+  font-family: 'Inter', sans-serif;;
 }
 
 a {
@@ -40,6 +44,7 @@ a {
     width: 95%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 
     .main-content-header {
